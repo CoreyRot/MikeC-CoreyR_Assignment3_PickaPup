@@ -4,6 +4,7 @@ import { createAppContainer } from 'react-navigation';
 import { Divider } from 'react-native-elements';
 
 class Match extends React.Component {
+  //call the modal to not show unless clicked on
     state = {
         modalVisible: false,
       };
@@ -12,6 +13,7 @@ class Match extends React.Component {
         this.setState({modalVisible: visible});
       }
   render() {
+    //shows the image on top and the map on the bottom lets you learn about the dog you are choosing and get to purchase it as well
     return (
         <View style={styles.container}>
           <Text style={styles.header}>Pick A Pup</Text>
@@ -68,7 +70,9 @@ class Match extends React.Component {
                 </View>
 
             </View>
-            <View style={{marginTop: 20}}>
+
+          <View style={{marginTop: 20}}>
+            
 <Modal
   animationType="slide"
   transparent={false}
@@ -76,6 +80,7 @@ class Match extends React.Component {
   onRequestClose={() => {
     Alert.alert('Modal has been closed.');
   }}>
+    
   <View style={{marginTop: 22}}>
   <TouchableHighlight style={{ paddingTop: 50, backgroundColor: "white"}}
         onPress={() => {
@@ -108,7 +113,7 @@ class Match extends React.Component {
 
       
     </ScrollView>
-      
+    
      
     </View>
 </Modal>

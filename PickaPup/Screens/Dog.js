@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Dimensions, Image, Animated, PanResponder } fro
 const SCREEN_HEIGHT = Dimensions.get('window').height
 const SCREEN_WIDTH = Dimensions.get('window').width
 
-
+//makes an array of pictures
 const Users = [
 	{ id: "1", uri: require('../assets/images/1.jpg') },
 	{ id: "2", uri: require('../assets/images/2.jpg') },
@@ -24,7 +24,7 @@ const Users = [
 	  this.state = {
 		currentIndex: 0
 	  }
-  
+	//clamps the picture to full screen width and height of the page  
 	  this.rotate = this.position.x.interpolate({
 		inputRange: [-SCREEN_WIDTH /2 ,0, SCREEN_WIDTH /2],
 		outputRange: ['-30deg', '0deg', '10deg'],
@@ -101,7 +101,7 @@ const Users = [
 	}
   
 	renderUsers = () => {
-  
+  //renders the view of the "users" and displays them accordingly
 	  return Users.map((item, i) => {
   
   
@@ -159,7 +159,7 @@ const Users = [
 		}
 	  }).reverse()
 	}
-  
+  //puts the users in the view and shows in the layout
 	render() {
 	  return (
 		<View style={{ flex: 1 }}>

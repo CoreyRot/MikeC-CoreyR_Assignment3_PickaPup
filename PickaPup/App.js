@@ -8,7 +8,7 @@ import { StyleSheet, Text, View, Dimensions, Image, Animated, PanResponder } fro
 import { createAppContainer } from 'react-navigation';
 import { StackNavigator } from 'react-navigation';
 
-
+// Imports the pages
 class ProfileScreen extends React.Component {
   render() {
     return (
@@ -43,7 +43,7 @@ class ContactScreen extends React.Component {
     );
   }
 }
-
+//shows pages on the tab navigator
 const TabNavigator = createBottomTabNavigator({
   Profile: ProfileScreen,
   Dogs: DogScreen,

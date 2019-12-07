@@ -18,7 +18,7 @@ export default class Contact extends Component {
   }
 
 
-
+//post the message and call the json file
   postMsg = (name, mobile, email, msg, nameClear, mobileClear, emailClear, msgClear) => {
     if(this.state.msg!=null){ 
       fetch('https://contact-us-ad847.firebaseio.com/contacts.json', {
@@ -49,6 +49,7 @@ export default class Contact extends Component {
                     isSubmited: true,
                   })              
               }
+              
               else{
               Alert.alert(
                 'Oops !',
@@ -63,6 +64,7 @@ export default class Contact extends Component {
       })
       .done();
     }
+    //if all the inputs aren't filled out relay this message
       else{
         Alert.alert(
           'Oops !',
@@ -98,6 +100,7 @@ export default class Contact extends Component {
                       <Icon active name="ios-checkmark-circle" style={{fontSize: 30, color: '#4CAF50', marginLeft:5, marginRight:10}} />
                        <Text style = {{ flex:1, textAlign:'left', }}>Thank! Our Staff and Support Team will get in touch with you as soon as possible!
                        In the meantime browse our selection of adorable dogs! </Text>
+                       
                     </Item>
                 </CardItem>
                 <CardItem>
@@ -112,8 +115,9 @@ export default class Contact extends Component {
                     </Right>
                 </CardItem>
             </View>
+            //once you click submit and it goes through you will be redirected to a post card page that shows the message
             :
-            
+            //make and style the contact form
             <View>
              
                 <CardItem style={{ height:120, }}>
